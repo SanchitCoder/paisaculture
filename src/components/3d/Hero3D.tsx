@@ -40,7 +40,7 @@ function FloatingGeometry({ prefersReduced }: { prefersReduced: boolean }) {
       {/* Outer distorted sphere */}
       <Sphere args={[1, 64, 64]} ref={meshRef} scale={scale}>
         <MeshDistortMaterial
-          color="#0EA5E9"
+          color="#1B365D"
           attach="material"
           distort={prefersReduced ? 0 : 0.35}
           speed={prefersReduced ? 0 : 1.5}
@@ -67,7 +67,7 @@ function FloatingGeometry({ prefersReduced }: { prefersReduced: boolean }) {
       <mesh ref={ringRef} scale={scale}>
         <torusGeometry args={[1.2, 0.04, 16, 80]} />
         <meshStandardMaterial
-          color="#F59E0B"
+          color="#C1272D"
           roughness={0.1}
           metalness={0.8}
           transparent
@@ -79,7 +79,7 @@ function FloatingGeometry({ prefersReduced }: { prefersReduced: boolean }) {
       <mesh scale={scale} rotation={[Math.PI / 3, 0, Math.PI / 6]}>
         <torusGeometry args={[1.05, 0.025, 12, 60]} />
         <meshStandardMaterial
-          color="#0EA5E9"
+          color="#1B365D"
           roughness={0.1}
           metalness={0.9}
           transparent
@@ -120,7 +120,7 @@ function ParticleField({ prefersReduced }: { prefersReduced: boolean }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.018}
-        color="#0EA5E9"
+        color="#1B365D"
         transparent
         opacity={0.55}
         sizeAttenuation
@@ -133,8 +133,8 @@ function Scene({ prefersReduced }: { prefersReduced: boolean }) {
   return (
     <>
       <ambientLight intensity={0.6} />
-      <pointLight position={[3, 3, 3]} intensity={1.8} color="#0EA5E9" />
-      <pointLight position={[-3, -2, -1]} intensity={1.2} color="#F59E0B" />
+      <pointLight position={[3, 3, 3]} intensity={1.8} color="#1B365D" />
+      <pointLight position={[-3, -2, -1]} intensity={1.2} color="#C1272D" />
       <directionalLight position={[0, 5, 2]} intensity={0.8} color="#ffffff" />
       <Environment preset="city" />
       <FloatingGeometry prefersReduced={prefersReduced} />

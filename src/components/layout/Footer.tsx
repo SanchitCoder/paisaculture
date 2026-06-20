@@ -35,15 +35,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 py-10 md:py-16 lg:py-20 border-b border-white/[0.06]">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-flex items-center gap-3 mb-6">
-              <FooterLogo />
-              <div>
-                <p className="font-serif font-bold text-[15px] text-white leading-tight">
-                  PAISA<span className="text-primary">CULTURE</span>
-                </p>
-                <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40">
-                  Services LLP
-                </p>
+            <Link to="/" className="inline-block mb-6">
+              <div className="bg-white rounded-xl px-3 py-2 inline-flex">
+                <img
+                  src="/logo.png"
+                  alt="Paisa Culture"
+                  className="h-8 w-auto object-contain"
+                  width={110}
+                  height={32}
+                />
               </div>
             </Link>
 
@@ -184,24 +184,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
-}
-
-function FooterLogo() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="38" height="38" rx="10" fill="#0EA5E9" fillOpacity="0.15" />
-      <path
-        d="M10 19C10 14.0294 14.0294 10 19 10C21.5 10 23.7 11.0 25.3 12.7L19 19L25.3 25.3C23.7 27.0 21.5 28 19 28C14.0294 28 10 23.9706 10 19Z"
-        fill="white"
-        fillOpacity="0.7"
-      />
-      <path
-        d="M28 19C28 23.9706 23.9706 28 19 28C16.5 28 14.3 27.0 12.7 25.3L19 19L12.7 12.7C14.3 11.0 16.5 10 19 10C23.9706 10 28 14.0294 28 19Z"
-        fill="#F59E0B"
-        fillOpacity="0.7"
-      />
-      <circle cx="19" cy="19" r="3" fill="white" fillOpacity="0.8" />
-    </svg>
   )
 }

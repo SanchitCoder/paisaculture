@@ -12,15 +12,15 @@ import CTASection from '../components/common/CTASection'
 import HeroVisual from '../components/hero/HeroVisual'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { ageStages } from '../data/services'
-import { allPartners, testimonials } from '../data/partners'
+import { featuredPartners, testimonials } from '../data/partners'
+import { serviceImages, sectionImages } from '../data/images'
 
 const easeOut: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Clients Served' },
-  { value: 5,   suffix: '',  label: 'Co-Founders' },
-  { value: 10,  suffix: '+', label: 'Businesses' },
-  { value: 8,   suffix: '+', label: 'Years Active' },
+  { value: 50,  prefix: '₹', suffix: ' Cr+', label: 'Assets Managed' },
+  { value: 100, prefix: '₹', suffix: ' Cr+', label: 'Insurance Cover Protected' },
+  { value: 25,  prefix: '₹', suffix: ' Cr+', label: 'Loans Facilitated' },
 ]
 
 const services = [
@@ -31,14 +31,16 @@ const services = [
     href: '/services/insurance',
     accent: 'text-primary',
     bg: 'bg-primary-50',
+    image: serviceImages.insurance,
   },
   {
     title: 'Loans',
     description: 'Home, business, vehicle, gold, and five more via tie-ups with top banks.',
     icon: <Banknote size={19} strokeWidth={1.8} />,
     href: '/services/loans',
-    accent: 'text-emerald-600',
-    bg: 'bg-emerald-50',
+    accent: 'text-primary-700',
+    bg: 'bg-primary-50',
+    image: serviceImages.loans,
   },
   {
     title: 'Investment',
@@ -47,14 +49,16 @@ const services = [
     href: '/services/investment',
     accent: 'text-accent',
     bg: 'bg-accent-50',
+    image: serviceImages.investment,
   },
   {
     title: 'Advisory',
     description: 'Portfolio management, risk framework, and structured financial planning.',
     icon: <LineChart size={19} strokeWidth={1.8} />,
     href: '/services/advisory',
-    accent: 'text-purple-600',
-    bg: 'bg-purple-50',
+    accent: 'text-accent-700',
+    bg: 'bg-accent-50',
+    image: serviceImages.advisory,
   },
 ]
 
@@ -121,7 +125,7 @@ export default function Home() {
       {/* ─── 1. HERO ─────────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative min-h-[100dvh] flex items-center bg-[#F7F6F2] overflow-hidden"
+        className="relative min-h-[100dvh] flex items-center bg-white overflow-hidden"
         aria-label="Hero"
       >
         {/* Ambient glows */}
@@ -185,10 +189,20 @@ export default function Home() {
               initial={prefersReduced ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.38, ease: easeOut }}
-              className="text-[15.5px] text-dark-500 leading-relaxed mb-8 max-w-[42ch]"
+              className="font-serif font-semibold text-[17px] md:text-[18px] text-dark-800 leading-snug mb-3 max-w-[44ch]"
             >
-              Five entrepreneur founders. One-window advisory for insurance, loans,
-              investments, and portfolio management — in Pune and beyond.
+              Everything Financial, Backed by Expert Advice
+            </motion.p>
+
+            <motion.p
+              initial={prefersReduced ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.44, ease: easeOut }}
+              className="text-[15.5px] text-dark-500 leading-relaxed mb-8 max-w-[46ch]"
+            >
+              At Paisa Culture, we simplify financial decisions by bringing insurance,
+              investments, loans, and wealth management under one roof—helping you make
+              confident financial decisions at every stage of life.
             </motion.p>
 
             <motion.div
@@ -223,26 +237,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Floating badge — clients */}
+            {/* Floating badge — insurance cover */}
             <motion.div
               initial={prefersReduced ? false : { opacity: 0, y: 10, scale: 0.94 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.85, ease: easeOut }}
               className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-card ring-1 ring-[rgba(20,24,33,0.06)]"
             >
-              <p className="font-serif font-bold text-[22px] text-accent leading-none">500+</p>
-              <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-dark-400 mt-0.5">Clients</p>
+              <p className="font-serif font-bold text-[20px] text-accent leading-none">₹100 Cr+</p>
+              <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-dark-400 mt-0.5">Insurance</p>
             </motion.div>
 
-            {/* Floating badge — AUM */}
+            {/* Floating badge — assets managed */}
             <motion.div
               initial={prefersReduced ? false : { opacity: 0, y: 10, scale: 0.94 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.05, ease: easeOut }}
               className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-card ring-1 ring-[rgba(20,24,33,0.06)]"
             >
-              <p className="font-serif font-bold text-[22px] text-primary leading-none">₹50Cr+</p>
-              <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-dark-400 mt-0.5">Managed</p>
+              <p className="font-serif font-bold text-[20px] text-primary leading-none">₹50 Cr+</p>
+              <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-dark-400 mt-0.5">Assets</p>
             </motion.div>
           </motion.div>
         </div>
@@ -251,11 +265,12 @@ export default function Home() {
       {/* ─── 2. STATS STRIP ──────────────────────────────────────── */}
       <section className="bg-white border-y border-[rgba(20,24,33,0.06)] py-10">
         <div className="container-xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {stats.map((stat, i) => (
               <StatBadge
                 key={stat.label}
                 value={stat.value}
+                prefix={stat.prefix}
                 suffix={stat.suffix}
                 label={stat.label}
                 delay={i * 110}
@@ -266,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* ─── 3. SERVICES — Editorial split with photography ──────── */}
-      <section ref={servicesRef} className="bg-[#F7F6F2] section-pad">
+      <section ref={servicesRef} className="bg-white section-pad">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
@@ -281,14 +296,14 @@ export default function Home() {
               {/* Image with parallax */}
               <div className="absolute inset-0 overflow-hidden rounded-3xl">
                 <motion.img
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
-                  alt="Professional financial consultation"
+                  src={serviceImages.wealthOverview.src}
+                  alt={serviceImages.wealthOverview.alt}
                   className="w-full h-[116%] object-cover object-center"
                   loading="lazy"
                   style={prefersReduced ? {} : { y: svcImgY }}
                   onError={(e) => {
                     const frame = e.currentTarget.closest('[class*="rounded-3xl"]') as HTMLElement | null
-                    if (frame) frame.style.background = '#141821'
+                    if (frame) frame.style.background = '#1B365D'
                     e.currentTarget.style.display = 'none'
                   }}
                 />
@@ -322,7 +337,7 @@ export default function Home() {
                   transition={{ duration: 0.6, ease: easeOut }}
                   className="font-serif text-display-md font-bold text-dark-900 max-w-[18ch] leading-tight"
                 >
-                  Everything Financial,<br className="hidden sm:block" /> In One Place
+                  Protect, Grow and<br className="hidden sm:block" /> Manage Your Wealth
                 </motion.h2>
                 <motion.div
                   initial={prefersReduced ? false : { opacity: 0 }}
@@ -351,11 +366,19 @@ export default function Home() {
                   >
                     <Link
                       to={svc.href}
-                      className="group flex items-center gap-5 py-5 border-b border-[rgba(20,24,33,0.06)] last:border-0 -mx-3 px-3 rounded-xl hover:bg-[rgba(14,165,233,0.03)] transition-colors duration-150"
+                      className="group flex items-center gap-5 py-5 border-b border-[rgba(27,54,93,0.08)] last:border-0 -mx-3 px-3 rounded-xl hover:bg-primary-50/60 transition-colors duration-150"
                     >
                       <span className="font-mono text-[10px] tracking-[0.15em] text-dark-300 w-7 flex-shrink-0 select-none">
                         0{i + 1}
                       </span>
+                      <div className="hidden sm:block w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 ring-1 ring-[rgba(27,54,93,0.08)]">
+                        <img
+                          src={svc.image.src}
+                          alt={svc.image.alt}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
                       <div className={`w-9 h-9 rounded-xl ${svc.bg} flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-[1.06]`}>
                         <span className={svc.accent}>{svc.icon}</span>
                       </div>
@@ -414,9 +437,21 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: i * 0.05, ease: easeOut }}
-                  className="w-[196px] flex-shrink-0 rounded-2xl bg-[#F7F6F2] border border-[rgba(20,24,33,0.06)] p-5 hover:-translate-y-1 hover:shadow-card transition-all duration-200"
+                  className="w-[220px] flex-shrink-0 rounded-2xl bg-white border border-[rgba(20,24,33,0.06)] overflow-hidden hover:-translate-y-1 hover:shadow-card transition-all duration-200"
                   style={{ transitionTimingFunction: 'var(--ease-out)' }}
                 >
+                  {stage.imageUrl && (
+                    <div className="relative h-[100px]">
+                      <img
+                        src={stage.imageUrl}
+                        alt={stage.imageAlt ?? stage.label}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" aria-hidden="true" />
+                    </div>
+                  )}
+                  <div className="p-5 pt-4">
                   <span className="font-mono text-[9.5px] tracking-[0.18em] text-dark-400 uppercase">
                     Age {stage.range}
                   </span>
@@ -431,6 +466,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -439,7 +475,7 @@ export default function Home() {
       </section>
 
       {/* ─── 5. START — Kinetic letter rows ──────────────────────── */}
-      <section className="relative bg-[#141821] section-pad overflow-hidden">
+      <section className="relative bg-primary-900 section-pad overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 rounded-full bg-primary/[0.06] blur-[100px] pointer-events-none" aria-hidden="true" />
         <div className="absolute bottom-1/3 right-1/4 w-52 h-52 rounded-full bg-accent/[0.05] blur-[80px] pointer-events-none" aria-hidden="true" />
 
@@ -494,7 +530,7 @@ export default function Home() {
       </section>
 
       {/* ─── 6. WHY US — Numbered editorial rows + flagship ─────── */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <motion.h2
             initial={prefersReduced ? false : { opacity: 0, y: 20 }}
@@ -537,9 +573,16 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.15, ease: easeOut }}
-            className="mt-10 rounded-3xl bg-dark-900 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-7 relative overflow-hidden"
+            className="mt-10 rounded-3xl bg-primary-900 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-7 relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-primary/[0.07] blur-3xl pointer-events-none" aria-hidden="true" />
+            <img
+              src={sectionImages.portfolioCharts.src}
+              alt={sectionImages.portfolioCharts.alt}
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-900/95 via-primary-900/90 to-primary-900/75" aria-hidden="true" />
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-accent/10 blur-3xl pointer-events-none" aria-hidden="true" />
             <div className="flex-1 relative">
               <span className="font-mono text-[9.5px] tracking-[0.22em] uppercase text-accent/75 mb-2 block">
                 Flagship Services
@@ -562,12 +605,12 @@ export default function Home() {
       {/* ─── 7. TRUST STRIP ──────────────────────────────────────── */}
       <section className="bg-white py-12 border-y border-[rgba(20,24,33,0.06)]">
         <div className="container-xl">
-          <LogoCloud items={allPartners} title="Trusted Partners" />
+          <LogoCloud items={featuredPartners} title="Trusted Partners" />
         </div>
       </section>
 
       {/* ─── 8. TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="bg-[#EEECE6] section-pad">
+      <section className="bg-canvas-alt section-pad">
         <div className="container-xl">
           <motion.h2
             initial={prefersReduced ? false : { opacity: 0, y: 18 }}

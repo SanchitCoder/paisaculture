@@ -1,4 +1,5 @@
 import type { AgeStage, AssetClass, InsuranceType, LoanType } from '../types'
+import { lifeStageImages } from './images'
 
 export const ageStages: AgeStage[] = [
   {
@@ -7,6 +8,8 @@ export const ageStages: AgeStage[] = [
     needs: ['Term Life Insurance', 'Emergency Fund', 'Equity SIPs', 'Health Cover'],
     color: 'bg-primary-50',
     accent: 'text-primary-600',
+    imageUrl: lifeStageImages['25-30'].src,
+    imageAlt: lifeStageImages['25-30'].alt,
   },
   {
     range: '30-35',
@@ -14,27 +17,35 @@ export const ageStages: AgeStage[] = [
     needs: ['Home Loan Planning', 'Child Education Fund', 'ULIP Plans', 'Critical Illness Cover'],
     color: 'bg-accent-50',
     accent: 'text-accent-600',
+    imageUrl: lifeStageImages['30-35'].src,
+    imageAlt: lifeStageImages['30-35'].alt,
   },
   {
     range: '35-40',
     label: 'Accumulation',
     needs: ['Wealth Building', 'Retirement Corpus', 'Portfolio Management', 'Tax Efficiency'],
-    color: 'bg-emerald-50',
-    accent: 'text-emerald-600',
+    color: 'bg-primary-50',
+    accent: 'text-primary-600',
+    imageUrl: lifeStageImages['35-40'].src,
+    imageAlt: lifeStageImages['35-40'].alt,
   },
   {
     range: '40-45',
     label: 'Optimization',
     needs: ['Health Care Planning', 'Senior Parent Cover', 'PMS Strategy', 'Debt Restructuring'],
-    color: 'bg-purple-50',
-    accent: 'text-purple-600',
+    color: 'bg-accent-50',
+    accent: 'text-accent-600',
+    imageUrl: lifeStageImages['40-45'].src,
+    imageAlt: lifeStageImages['40-45'].alt,
   },
   {
     range: '50+',
     label: 'Legacy',
     needs: ['Pension Plans', 'Guaranteed Income', 'Estate Planning', 'Medical Cover'],
-    color: 'bg-rose-50',
-    accent: 'text-rose-600',
+    color: 'bg-primary-50',
+    accent: 'text-primary-600',
+    imageUrl: lifeStageImages['50+'].src,
+    imageAlt: lifeStageImages['50+'].alt,
   },
 ]
 

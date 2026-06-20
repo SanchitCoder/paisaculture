@@ -26,9 +26,9 @@ export default function CTASection({
 
   const bgClass =
     variant === 'dark'
-      ? 'bg-[#141821]'
+      ? 'bg-primary-900'
       : variant === 'gradient'
-      ? 'bg-gradient-to-br from-primary-900 via-[#141821] to-[#141821]'
+      ? 'bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900'
       : 'bg-primary-600'
 
   return (

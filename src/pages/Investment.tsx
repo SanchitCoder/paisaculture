@@ -4,7 +4,9 @@ import { TrendingUp, Shield, Coins, BarChart3, Layers, Star, ArrowRight } from '
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/common/SectionHeading'
 import CTASection from '../components/common/CTASection'
+import PageHero from '../components/common/PageHero'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { heroImages, sectionImages } from '../data/images'
 import { assetClasses } from '../data/services'
 
 const featuredProducts = [
@@ -53,34 +55,17 @@ export default function Investment() {
         />
       </Helmet>
 
-      {/* PAGE HERO */}
-      <section className="bg-dark-900 pt-24 md:pt-32 pb-14 md:pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full bg-accent/6 blur-3xl" />
-        </div>
-        <div className="container-xl relative">
-          <motion.div
-            initial={prefersReduced ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="eyebrow text-accent-400 mb-5 inline-flex">
-              <span className="w-4 h-px bg-current mt-[7px]" />
-              Investment
-              <span className="w-4 h-px bg-current mt-[7px]" />
-            </span>
-            <h1 className="font-serif text-display-lg font-bold text-white mb-4 max-w-xl text-balance">
-              Grow Your Wealth. Secure Your Future.
-            </h1>
-            <p className="text-white/60 text-base md:text-lg max-w-lg leading-relaxed">
-              From guaranteed income for the cautious to equity growth for the ambitious — investment solutions structured around your life, not market trends.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Investment"
+        eyebrowClass="text-accent-300"
+        title="Grow Your Wealth. Secure Your Future."
+        subtitle="From guaranteed income for the cautious to equity growth for the ambitious — investment solutions structured around your life, not market trends."
+        imageSrc={heroImages.investment.src}
+        imageAlt={heroImages.investment.alt}
+      />
 
       {/* FEATURED PRODUCTS */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <SectionHeading
             eyebrow="Featured Products"
@@ -144,12 +129,29 @@ export default function Investment() {
       {/* ASSET CLASSES */}
       <section className="bg-white section-pad">
         <div className="container-xl">
-          <SectionHeading
-            eyebrow="Asset Classes"
-            title="Understanding Your Investment Universe"
-            subtitle="A diversified portfolio draws from multiple asset classes. We help you understand — and balance — each one."
-            className="mb-14"
-          />
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 mb-14 items-center">
+            <SectionHeading
+              eyebrow="Asset Classes"
+              title="Understanding Your Investment Universe"
+              subtitle="A diversified portfolio draws from multiple asset classes. We help you understand — and balance — each one."
+              align="left"
+              className="mb-0"
+            />
+            <motion.div
+              initial={prefersReduced ? false : { opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="rounded-2xl overflow-hidden h-[200px] lg:h-[240px] shadow-card"
+            >
+              <img
+                src={sectionImages.portfolioCharts.src}
+                alt={sectionImages.portfolioCharts.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {assetClasses.map((ac, i) => (
@@ -159,7 +161,7 @@ export default function Investment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
-                className="bg-[#F7F6F2] rounded-2xl border border-[rgba(30,41,59,0.07)] p-5 hover:bg-white hover:shadow-card transition-all duration-300"
+                className="bg-white rounded-2xl border border-[rgba(30,41,59,0.07)] p-5 hover:bg-white hover:shadow-card transition-all duration-300"
               >
                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${ac.color} mb-4 flex items-center justify-center`}>
                   <Layers size={16} strokeWidth={2} className="text-white" />
@@ -189,17 +191,34 @@ export default function Investment() {
       </div>
 
       {/* GUARANTEED PENSION SPOTLIGHT */}
-      <section className="bg-dark-900 section-pad relative overflow-hidden">
+      <section className="bg-primary-900 section-pad relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full bg-accent/8 blur-3xl" />
         </div>
         <div className="container-xl relative">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <motion.div
+              initial={prefersReduced ? false : { opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-2xl overflow-hidden h-[280px] lg:h-[420px] shadow-card order-2 lg:order-1"
+            >
+              <img
+                src={sectionImages.piggyBank.src}
+                alt={sectionImages.piggyBank.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/60 to-transparent" aria-hidden="true" />
+            </motion.div>
+
             <motion.div
               initial={prefersReduced ? false : { opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="order-1 lg:order-2"
             >
               <div className="inline-flex w-14 h-14 rounded-2xl bg-accent/20 items-center justify-center mb-6">
                 <Coins size={26} strokeWidth={1.6} className="text-accent-400" />

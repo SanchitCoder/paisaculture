@@ -3,7 +3,10 @@ import { Helmet } from 'react-helmet-async'
 import { Car, Briefcase, User, Sprout, Home, GraduationCap, Gem, Building2, TrendingUp, CheckCircle2 } from 'lucide-react'
 import SectionHeading from '../components/common/SectionHeading'
 import CTASection from '../components/common/CTASection'
+import PageHero from '../components/common/PageHero'
+import SegmentPhoto from '../components/common/SegmentPhoto'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { heroImages, serviceImages } from '../data/images'
 
 const loanTypes = [
   { title: 'Vehicle Loan', desc: 'Finance your two-wheeler or car at competitive rates with flexible 12-84 month tenures.', Icon: Car, bg: 'bg-amber-50', color: 'text-amber-600' },
@@ -37,34 +40,17 @@ export default function Loans() {
         />
       </Helmet>
 
-      {/* PAGE HERO */}
-      <section className="bg-dark-900 pt-24 md:pt-32 pb-14 md:pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/3 left-1/3 w-96 h-96 rounded-full bg-emerald-500/6 blur-3xl" />
-        </div>
-        <div className="container-xl relative">
-          <motion.div
-            initial={prefersReduced ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="eyebrow text-emerald-400 mb-5 inline-flex">
-              <span className="w-4 h-px bg-current mt-[7px]" />
-              Loans
-              <span className="w-4 h-px bg-current mt-[7px]" />
-            </span>
-            <h1 className="font-serif text-display-lg font-bold text-white mb-4 max-w-xl text-balance">
-              Borrow Responsibly at the Lowest Available Rates
-            </h1>
-            <p className="text-white/60 text-base md:text-lg max-w-lg leading-relaxed">
-              Deep tie-ups with 8+ leading PSU and private banks mean you always get access to the best rates and terms — without running from bank to bank.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Loans"
+        eyebrowClass="text-accent-300"
+        title="Borrow Responsibly at the Lowest Available Rates"
+        subtitle="Deep tie-ups with 8+ leading PSU and private banks mean you always get access to the best rates and terms — without running from bank to bank."
+        imageSrc={heroImages.loans.src}
+        imageAlt={heroImages.loans.alt}
+      />
 
       {/* 9 LOAN TYPES */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <SectionHeading
             eyebrow="Loan Products"
@@ -113,7 +99,7 @@ export default function Loans() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.09 }}
-                  className="bg-[#F7F6F2] rounded-2xl border border-[rgba(30,41,59,0.07)] p-5"
+                  className="bg-white rounded-2xl border border-[rgba(30,41,59,0.07)] p-5"
                 >
                   <span className="font-mono text-[12px] font-bold text-primary mb-2 block">{step.step}</span>
                   <h4 className="font-sans font-semibold text-dark-900 text-[15px] mb-1.5">{step.title}</h4>
@@ -129,7 +115,7 @@ export default function Loans() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.2 }}
-            className="mt-14 p-8 rounded-2xl bg-[#EEECE6] border border-dark-100"
+            className="mt-14 p-8 rounded-2xl bg-canvas-alt border border-dark-100"
           >
             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-dark-400 mb-5">
               Bank Network
@@ -148,8 +134,30 @@ export default function Loans() {
         </div>
       </section>
 
+      <section className="bg-canvas-alt border-y border-[rgba(27,54,93,0.08)]">
+        <div className="container-xl py-10 md:py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="order-2 lg:order-1">
+              <p className="eyebrow mb-3">Home & Business Finance</p>
+              <h2 className="font-serif text-display-md font-bold text-dark-900 mb-4 max-w-[18ch]">
+                Finance built around your goals
+              </h2>
+              <p className="text-[15px] text-dark-600 leading-relaxed max-w-[48ch]">
+                Whether you are buying a home, expanding a business, or funding education, we match you with the right loan product and bank — at the best available rate.
+              </p>
+            </div>
+            <SegmentPhoto
+              src={serviceImages.loans.src}
+              alt={serviceImages.loans.alt}
+              className="rounded-2xl h-[240px] md:h-[320px] shadow-card order-1 lg:order-2"
+              overlay
+            />
+          </div>
+        </div>
+      </section>
+
       {/* KEY BENEFITS */}
-      <section className="bg-[#EEECE6] py-16">
+      <section className="bg-canvas-alt py-16">
         <div className="container-xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[

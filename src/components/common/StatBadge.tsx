@@ -6,12 +6,13 @@ import { useReducedMotion } from '../../hooks/useReducedMotion'
 interface StatBadgeProps {
   value: number
   suffix: string
+  prefix?: string
   label: string
   delay?: number
   light?: boolean
 }
 
-export default function StatBadge({ value, suffix, label, delay = 0, light = false }: StatBadgeProps) {
+export default function StatBadge({ value, suffix, prefix = '', label, delay = 0, light = false }: StatBadgeProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.5 })
   const prefersReduced = useReducedMotion()
@@ -31,6 +32,15 @@ export default function StatBadge({ value, suffix, label, delay = 0, light = fal
       className={`flex flex-col items-center text-center ${light ? 'text-white' : 'text-dark-900'}`}
     >
       <div className="flex items-baseline gap-0.5">
+        {prefix && (
+          <span
+            className={`font-serif font-bold text-2xl md:text-3xl ${
+              light ? 'text-accent-400' : 'text-accent'
+            }`}
+          >
+            {prefix}
+          </span>
+        )}
         <span
           className={`font-serif font-bold text-4xl md:text-5xl tabular-nums ${
             light ? 'text-accent-400' : 'text-accent'

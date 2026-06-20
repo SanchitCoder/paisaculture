@@ -115,7 +115,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-[#F7F6F2] border border-dark-100">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-white border border-dark-100">
                 <MapPin size={18} className="text-primary flex-shrink-0" strokeWidth={2} />
                 <div>
                   <p className="text-[13px] font-semibold text-dark-800">Based in Pune, Maharashtra</p>
@@ -123,7 +123,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-[#F7F6F2] border border-dark-100">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-white border border-dark-100">
                 <Users size={18} className="text-primary flex-shrink-0" strokeWidth={2} />
                 <div>
                   <p className="text-[13px] font-semibold text-dark-800">5 Founders, 10+ Businesses</p>
@@ -159,7 +159,7 @@ export default function About() {
       </section>
 
       {/* MISSION / VISION / VALUES */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             <motion.div
@@ -240,7 +240,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: i * 0.09 }}
-                className="group bg-[#F7F6F2] rounded-2xl border border-[rgba(30,41,59,0.07)] overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-[rgba(30,41,59,0.07)] overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -264,7 +264,7 @@ export default function About() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="bg-[#EEECE6] section-pad">
+      <section className="bg-canvas-alt section-pad">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <SectionHeading

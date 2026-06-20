@@ -4,7 +4,10 @@ import { Shield, Heart, Car, Plane, Home, AlertCircle, HardHat, Users, CreditCar
 import SectionHeading from '../components/common/SectionHeading'
 import FeatureBenefitCard from '../components/common/FeatureBenefitCard'
 import CTASection from '../components/common/CTASection'
+import PageHero from '../components/common/PageHero'
+import SegmentPhoto from '../components/common/SegmentPhoto'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { heroImages, sectionImages } from '../data/images'
 
 const retailCards = [
   { title: 'Life Insurance', desc: 'Term, endowment, ULIP, and whole life — protection and wealth together.', Icon: Heart, bg: 'bg-rose-50', color: 'text-rose-500' },
@@ -82,34 +85,16 @@ export default function Insurance() {
         />
       </Helmet>
 
-      {/* PAGE HERO */}
-      <section className="bg-dark-900 pt-24 md:pt-32 pb-14 md:pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full bg-primary/7 blur-3xl" />
-        </div>
-        <div className="container-xl relative">
-          <motion.div
-            initial={prefersReduced ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="eyebrow text-primary-300 mb-5 inline-flex">
-              <span className="w-4 h-px bg-current mt-[7px]" />
-              Insurance
-              <span className="w-4 h-px bg-current mt-[7px]" />
-            </span>
-            <h1 className="font-serif text-display-lg font-bold text-white mb-4 max-w-xl text-balance">
-              Protection for Every Life Stage and Business
-            </h1>
-            <p className="text-white/60 text-base md:text-lg max-w-lg leading-relaxed">
-              Retail and industrial insurance across all categories — with independent advice on which products genuinely protect you.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Insurance"
+        title="Protection for Every Life Stage and Business"
+        subtitle="Retail and industrial insurance across all categories — with independent advice on which products genuinely protect you."
+        imageSrc={heroImages.insurance.src}
+        imageAlt={heroImages.insurance.alt}
+      />
 
       {/* RETAIL INSURANCE */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <SectionHeading
             eyebrow="Retail Insurance"
@@ -139,6 +124,29 @@ export default function Insurance() {
         </div>
       </section>
 
+      {/* Visual break — insurance protection */}
+      <section className="bg-canvas-alt border-y border-[rgba(27,54,93,0.08)]">
+        <div className="container-xl py-10 md:py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <SegmentPhoto
+              src={sectionImages.insuranceShield.src}
+              alt={sectionImages.insuranceShield.alt}
+              className="rounded-2xl h-[240px] md:h-[320px] shadow-card"
+              overlay
+            />
+            <div>
+              <p className="eyebrow mb-3">Coverage That Fits</p>
+              <h2 className="font-serif text-display-md font-bold text-dark-900 mb-4 max-w-[20ch]">
+                Shield what matters most
+              </h2>
+              <p className="text-[15px] text-dark-600 leading-relaxed max-w-[48ch]">
+                From health emergencies to business continuity, the right insurance policy protects your savings, your family, and your enterprise — without paying for cover you do not need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INDUSTRIAL & COMMERCIAL */}
       <section className="bg-white section-pad">
         <div className="container-xl">
@@ -157,7 +165,7 @@ export default function Insurance() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
-                className="bg-[#F7F6F2] rounded-2xl border border-[rgba(30,41,59,0.07)] p-6 hover:bg-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-2xl border border-[rgba(30,41,59,0.07)] p-6 hover:bg-white hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`w-11 h-11 rounded-xl ${bg} flex items-center justify-center mb-4`}>
                   <Icon size={20} strokeWidth={1.8} className={color} />

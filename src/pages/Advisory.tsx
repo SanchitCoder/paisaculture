@@ -4,8 +4,11 @@ import { LineChart, BarChart2, Target, Shield, TrendingUp, ArrowRight } from 'lu
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/common/SectionHeading'
 import CTASection from '../components/common/CTASection'
+import PageHero from '../components/common/PageHero'
+import SegmentPhoto from '../components/common/SegmentPhoto'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { performanceTable } from '../data/services'
+import { heroImages, serviceImages } from '../data/images'
 
 const pmsFeatures = [
   { title: 'Dedicated Portfolio Manager', desc: 'A named advisor manages your portfolio end-to-end with full accountability.' },
@@ -36,34 +39,17 @@ export default function Advisory() {
         />
       </Helmet>
 
-      {/* PAGE HERO */}
-      <section className="bg-dark-900 pt-24 md:pt-32 pb-14 md:pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-purple-500/6 blur-3xl" />
-        </div>
-        <div className="container-xl relative">
-          <motion.div
-            initial={prefersReduced ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="eyebrow text-purple-400 mb-5 inline-flex">
-              <span className="w-4 h-px bg-current mt-[7px]" />
-              Advisory
-              <span className="w-4 h-px bg-current mt-[7px]" />
-            </span>
-            <h1 className="font-serif text-display-lg font-bold text-white mb-4 max-w-xl text-balance">
-              Strategy, Clarity, and Active Portfolio Management
-            </h1>
-            <p className="text-white/60 text-base md:text-lg max-w-lg leading-relaxed">
-              For clients who want more than a product — they want a financial partner who actively manages and optimizes their wealth.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Advisory"
+        eyebrowClass="text-accent-300"
+        title="Strategy, Clarity, and Active Portfolio Management"
+        subtitle="For clients who want more than a product — they want a financial partner who actively manages and optimizes their wealth."
+        imageSrc={heroImages.advisory.src}
+        imageAlt={heroImages.advisory.alt}
+      />
 
       {/* PMS - FLAGSHIP */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <div>
@@ -93,7 +79,23 @@ export default function Advisory() {
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <motion.div
+              initial={prefersReduced ? false : { opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="rounded-2xl overflow-hidden h-[280px] lg:min-h-[420px] shadow-card"
+            >
+              <SegmentPhoto
+                src={serviceImages.advisory.src}
+                alt={serviceImages.advisory.alt}
+                className="h-full"
+                overlay
+              />
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-10">
               {pmsFeatures.map((f, i) => (
                 <motion.div
                   key={f.title}
@@ -110,7 +112,6 @@ export default function Advisory() {
                   <p className="text-[12.5px] text-dark-500 leading-relaxed">{f.desc}</p>
                 </motion.div>
               ))}
-            </div>
           </div>
         </div>
       </section>
@@ -127,7 +128,7 @@ export default function Advisory() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-[#F7F6F2] border border-[rgba(30,41,59,0.07)]"
+                  className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-[rgba(30,41,59,0.07)]"
                 >
                   <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white border border-primary-100 flex items-center justify-center shadow-sm">
                     <span className="font-mono text-[12px] font-bold text-primary">{step.step}</span>
@@ -151,7 +152,7 @@ export default function Advisory() {
       </section>
 
       {/* FINANCIAL PLANNING */}
-      <section className="bg-[#EEECE6] section-pad">
+      <section className="bg-canvas-alt section-pad">
         <div className="container-xl">
           <SectionHeading
             eyebrow="Financial Planning"
@@ -233,7 +234,7 @@ export default function Advisory() {
                 {performanceTable.map((row, i) => (
                   <tr
                     key={row.year}
-                    className={`border-t border-dark-100 ${i % 2 === 0 ? 'bg-white' : 'bg-[#F7F6F2]'} hover:bg-primary-50/50 transition-colors`}
+                    className={`border-t border-dark-100 ${i % 2 === 0 ? 'bg-white' : 'bg-white'} hover:bg-primary-50/50 transition-colors`}
                   >
                     <td className="px-4 py-2.5 font-mono font-semibold text-dark-800">{row.year}</td>
                     <td className={`px-4 py-2.5 text-right font-mono ${row.gold > 0 ? 'text-emerald-600' : 'text-rose-500'}`}>

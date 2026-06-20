@@ -55,15 +55,13 @@ export default function Header() {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-          <LogoMark />
-          <div>
-            <p className="font-serif font-bold text-[14.5px] leading-tight text-dark-900 tracking-tight">
-              PAISA<span className="text-primary">CULTURE</span>
-            </p>
-            <p className="font-sans text-[8.5px] font-semibold uppercase tracking-[0.22em] text-dark-400 -mt-0.5">
-              Services LLP
-            </p>
-          </div>
+          <img
+            src="/logo.png"
+            alt="Paisa Culture"
+            className="h-9 w-auto object-contain"
+            width={120}
+            height={36}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -158,7 +156,7 @@ export default function Header() {
           </a>
           <Link
             to="/book-appointment"
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-dark-900 text-white text-[12.5px] font-semibold rounded-xl transition-[transform,background-color] duration-[160ms] hover:bg-dark-800 active:scale-[0.97]"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-[12.5px] font-semibold rounded-xl transition-[transform,background-color] duration-[160ms] hover:bg-primary-700 active:scale-[0.97]"
             style={{ transitionTimingFunction: 'var(--ease-out)' }}
           >
             Book Consult
@@ -206,7 +204,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-            className="pointer-events-auto lg:hidden fixed inset-0 top-[68px] bg-[#F7F6F2]/98 backdrop-blur-xl z-40 overflow-y-auto"
+            className="pointer-events-auto lg:hidden fixed inset-0 top-[68px] bg-white/98 backdrop-blur-xl z-40 overflow-y-auto"
           >
             <nav className="container-xl pt-6 pb-10 flex flex-col" aria-label="Mobile navigation">
               {navLinks.map((link, idx) => (
@@ -275,24 +273,5 @@ export default function Header() {
         )}
       </AnimatePresence>
     </header>
-  )
-}
-
-function LogoMark() {
-  return (
-    <svg width="34" height="34" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="38" height="38" rx="10" fill="#0EA5E9" />
-      <path
-        d="M10 19C10 14.0294 14.0294 10 19 10C21.5 10 23.7 11.0 25.3 12.7L19 19L25.3 25.3C23.7 27.0 21.5 28 19 28C14.0294 28 10 23.9706 10 19Z"
-        fill="white"
-        fillOpacity="0.9"
-      />
-      <path
-        d="M28 19C28 23.9706 23.9706 28 19 28C16.5 28 14.3 27.0 12.7 25.3L19 19L12.7 12.7C14.3 11.0 16.5 10 19 10C23.9706 10 28 14.0294 28 19Z"
-        fill="#F59E0B"
-        fillOpacity="0.9"
-      />
-      <circle cx="19" cy="19" r="3" fill="white" />
-    </svg>
   )
 }

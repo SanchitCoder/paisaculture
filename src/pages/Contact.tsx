@@ -91,7 +91,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
             {/* CONTACT FORM */}

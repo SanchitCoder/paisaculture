@@ -28,6 +28,7 @@ export interface PartnerLogo {
   id: string
   name: string
   category: 'bank' | 'insurer' | 'broker'
+  logoUrl?: string
 }
 
 export interface AgeStage {
@@ -36,6 +37,8 @@ export interface AgeStage {
   needs: string[]
   color: string
   accent: string
+  imageUrl?: string
+  imageAlt?: string
 }
 
 export interface LoanType {

@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Shield, Banknote, TrendingUp, LineChart, ArrowUpRight } from 'lucide-react'
-import SectionHeading from '../components/common/SectionHeading'
+import PageHero from '../components/common/PageHero'
 import CTASection from '../components/common/CTASection'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { heroImages, serviceImages } from '../data/images'
 
 const services = [
   {
@@ -18,7 +19,7 @@ const services = [
     bg: 'bg-primary-50',
     border: 'border-primary-100',
     cta: 'Explore Insurance',
-    image: 'https://picsum.photos/seed/insurance-advisory-pune/600/400',
+    image: serviceImages.insurance,
   },
   {
     title: 'Loans',
@@ -27,11 +28,11 @@ const services = [
     highlights: ['Home & Vehicle Loans', 'Business & Personal Loans', 'Gold & Education Loans', 'Loan Against Property'],
     href: '/services/loans',
     icon: <Banknote size={28} strokeWidth={1.6} />,
-    accent: 'text-emerald-600',
-    bg: 'bg-emerald-50',
-    border: 'border-emerald-100',
+    accent: 'text-primary-700',
+    bg: 'bg-primary-50',
+    border: 'border-primary-100',
     cta: 'Explore Loans',
-    image: 'https://picsum.photos/seed/loans-banking-india/600/400',
+    image: serviceImages.loans,
   },
   {
     title: 'Investment',
@@ -44,7 +45,7 @@ const services = [
     bg: 'bg-accent-50',
     border: 'border-accent-100',
     cta: 'Explore Investment',
-    image: 'https://picsum.photos/seed/investment-mutual-funds-india/600/400',
+    image: serviceImages.investment,
   },
   {
     title: 'Advisory',
@@ -53,11 +54,11 @@ const services = [
     highlights: ['Portfolio Management (PMS)', 'Risk Analysis & Assessment', 'Financial Planning', 'Retirement Strategy'],
     href: '/services/advisory',
     icon: <LineChart size={28} strokeWidth={1.6} />,
-    accent: 'text-purple-600',
-    bg: 'bg-purple-50',
-    border: 'border-purple-100',
+    accent: 'text-accent-700',
+    bg: 'bg-accent-50',
+    border: 'border-accent-100',
     cta: 'Explore Advisory',
-    image: 'https://picsum.photos/seed/financial-advisory-planning/600/400',
+    image: serviceImages.advisory,
   },
 ]
 
@@ -74,34 +75,16 @@ export default function Services() {
         />
       </Helmet>
 
-      {/* PAGE HERO */}
-      <section className="bg-dark-900 pt-24 md:pt-32 pb-14 md:pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-primary/7 blur-3xl" />
-        </div>
-        <div className="container-xl relative">
-          <motion.div
-            initial={prefersReduced ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="eyebrow text-primary-300 mb-5 inline-flex">
-              <span className="w-4 h-px bg-current mt-[7px]" />
-              What We Offer
-              <span className="w-4 h-px bg-current mt-[7px]" />
-            </span>
-            <h1 className="font-serif text-display-lg font-bold text-white mb-4 max-w-xl text-balance">
-              All Financial Services, All Under One Roof
-            </h1>
-            <p className="text-white/60 text-base md:text-lg max-w-lg leading-relaxed">
-              Four service lines. One advisor relationship. Every product decision coordinated for your benefit.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="What We Offer"
+        title="All Financial Services, All Under One Roof"
+        subtitle="Four service lines. One advisor relationship. Every product decision coordinated for your benefit."
+        imageSrc={heroImages.services.src}
+        imageAlt={heroImages.services.alt}
+      />
 
       {/* SERVICE CARDS */}
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl">
           <div className="flex flex-col gap-6">
             {services.map((svc, i) => (
@@ -115,10 +98,10 @@ export default function Services() {
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-2 ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                   {/* Image */}
-                  <div className={`relative h-56 lg:h-auto ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className={`relative h-56 lg:h-auto min-h-[220px] ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <img
-                      src={svc.image}
-                      alt={`${svc.title} services`}
+                      src={svc.image.src}
+                      alt={svc.image.alt}
                       className="w-full h-full object-cover"
                       loading="lazy"
                       width={600}

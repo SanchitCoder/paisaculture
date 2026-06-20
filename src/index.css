@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    /* Brand */
-    --color-primary: #0EA5E9;
-    --color-dark: #141821;
-    --color-accent: #F59E0B;
+    /* Brand — Paisa Culture logo tones */
+    --color-primary: #1B365D;
+    --color-dark: #152847;
+    --color-accent: #C1272D;
 
     /* Canvas */
-    --canvas: #F7F6F2;
-    --canvas-alt: #EEECE6;
+    --canvas: #FFFFFF;
+    --canvas-alt: #F4F6F9;
     --surface: #FFFFFF;
 
     /* Type */
-    --text-primary: #1C2029;
-    --text-secondary: #6B6F7A;
-    --text-muted: #9CA3AF;
+    --text-primary: #152847;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
 
     /* Borders */
-    --border: rgba(20, 24, 33, 0.06);
-    --border-strong: rgba(20, 24, 33, 0.12);
+    --border: rgba(27, 54, 93, 0.08);
+    --border-strong: rgba(27, 54, 93, 0.14);
 
     /* Emil's easing system */
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -41,7 +41,7 @@
   }
 
   body {
-    @apply font-sans bg-[#F7F6F2] text-[#1C2029];
+    @apply font-sans bg-white text-dark-900;
     font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ss01' 1;
   }
 
@@ -54,13 +54,13 @@
   }
 
   ::selection {
-    background-color: rgba(14, 165, 233, 0.18);
-    color: #0c4a6e;
+    background-color: rgba(27, 54, 93, 0.14);
+    color: #1B365D;
   }
 
   /* Focus visible — keyboard only */
   :focus-visible {
-    outline: 2px solid #0EA5E9;
+    outline: 2px solid #1B365D;
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -71,11 +71,11 @@
 }
 
 @layer components {
-  /* Primary CTA button */
+  /* Primary CTA button — navy blue */
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-[14px] font-semibold rounded-xl
       transition-[transform,box-shadow,background-color] duration-[160ms]
-      hover:bg-primary-700 hover:shadow-[0_4px_16px_rgba(14,165,233,0.35)]
+      hover:bg-primary-700 hover:shadow-[0_4px_16px_rgba(27,54,93,0.28)]
       active:scale-[0.97] active:shadow-none
       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
     transition-timing-function: var(--ease-out);
@@ -83,12 +83,12 @@
 
   /* Secondary ghost button */
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-[#1C2029] text-[14px] font-semibold rounded-xl
-      border border-[rgba(20,24,33,0.14)]
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-dark-900 text-[14px] font-semibold rounded-xl
+      border border-[rgba(27,54,93,0.14)]
       transition-[transform,background-color,border-color] duration-[160ms]
-      hover:bg-[rgba(20,24,33,0.04)] hover:border-[rgba(20,24,33,0.22)]
+      hover:bg-primary-50 hover:border-primary-200
       active:scale-[0.97]
-      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2;
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
     transition-timing-function: var(--ease-out);
   }
 
@@ -104,10 +104,10 @@
 
   /* Base card — double-bezel architecture */
   .card {
-    @apply bg-white rounded-2xl border border-[rgba(20,24,33,0.06)]
+    @apply bg-white rounded-2xl border border-[rgba(27,54,93,0.08)]
       transition-[transform,box-shadow] duration-[240ms]
       hover:-translate-y-1 hover:shadow-card-hover;
-    box-shadow: 0 1px 2px rgba(20, 24, 33, 0.04), 0 4px 12px rgba(20, 24, 33, 0.04);
+    box-shadow: 0 1px 2px rgba(27, 54, 93, 0.04), 0 4px 12px rgba(27, 54, 93, 0.04);
     transition-timing-function: var(--ease-out);
   }
 
@@ -121,7 +121,7 @@
 
   /* Eyebrow — used sparingly (max 1 per 3 sections) */
   .eyebrow {
-    @apply inline-block text-[10.5px] font-semibold uppercase tracking-[0.2em] text-primary;
+    @apply inline-block text-[10.5px] font-semibold uppercase tracking-[0.2em] text-accent;
   }
 
   .stat-number {
@@ -130,7 +130,7 @@
 
   /* Subtle divider */
   .divider {
-    @apply border-b border-[rgba(20,24,33,0.06)];
+    @apply border-b border-[rgba(27,54,93,0.08)];
   }
 }
 

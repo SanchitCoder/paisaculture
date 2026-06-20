@@ -107,7 +107,7 @@ export default function BookAppointment() {
         </div>
       </section>
 
-      <section className="bg-[#F7F6F2] section-pad">
+      <section className="bg-white section-pad">
         <div className="container-xl max-w-3xl">
           <motion.div
             initial={prefersReduced ? false : { opacity: 0, y: 28 }}
@@ -135,7 +135,7 @@ export default function BookAppointment() {
                 <p className="text-dark-500 text-[15px] leading-relaxed mb-2 max-w-sm">
                   Thank you, <strong>{form.name.split(' ')[0]}</strong>. Your consultation has been scheduled.
                 </p>
-                <div className="bg-[#F7F6F2] rounded-xl p-4 mt-4 mb-8 text-left w-full max-w-xs space-y-2">
+                <div className="bg-white rounded-xl p-4 mt-4 mb-8 text-left w-full max-w-xs space-y-2">
                   <div className="flex items-center gap-2 text-[13.5px] text-dark-700">
                     <Calendar size={14} className="text-primary" />
                     {form.date}
@@ -252,7 +252,7 @@ export default function BookAppointment() {
                           className={`flex flex-col items-center gap-1.5 p-2.5 sm:p-3 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
                             form.mode === value
                               ? 'border-primary bg-primary-50 text-primary'
-                              : 'border-dark-200 bg-[#F7F6F2] text-dark-600 hover:border-primary/40'
+                              : 'border-dark-200 bg-white text-dark-600 hover:border-primary/40'
                           }`}
                         >
                           <input

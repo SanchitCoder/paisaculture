@@ -36,9 +36,9 @@ export default function HeroVisual() {
             x1="0" y1="60" x2="0" y2="334"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0%"   stopColor="#0EA5E9" stopOpacity="0.22" />
-            <stop offset="55%"  stopColor="#0EA5E9" stopOpacity="0.06" />
-            <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0"    />
+            <stop offset="0%"   stopColor="#1B365D" stopOpacity="0.22" />
+            <stop offset="55%"  stopColor="#1B365D" stopOpacity="0.06" />
+            <stop offset="100%" stopColor="#1B365D" stopOpacity="0"    />
           </linearGradient>
         </defs>
 
@@ -71,7 +71,7 @@ export default function HeroVisual() {
         {/* Main line — draws left-to-right */}
         <motion.path
           d={LINE}
-          stroke="#0EA5E9"
+          stroke="#1B365D"
           strokeWidth="2.5"
           fill="none"
           strokeLinecap="round"
@@ -92,8 +92,8 @@ export default function HeroVisual() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 1.75 + i * 0.08 }}
           >
-            <circle cx={pt.x} cy={pt.y} r="7"   fill="#0EA5E9" fillOpacity="0.14" />
-            <circle cx={pt.x} cy={pt.y} r="3.5" fill="#0EA5E9" />
+            <circle cx={pt.x} cy={pt.y} r="7"   fill="#1B365D" fillOpacity="0.14" />
+            <circle cx={pt.x} cy={pt.y} r="3.5" fill="#1B365D" />
             <text
               x={pt.x} y="354"
               textAnchor="middle"
@@ -118,7 +118,7 @@ export default function HeroVisual() {
             fill="none" stroke="rgba(20,24,33,0.08)" strokeWidth="1" />
           <text x="270" y="36" fontSize="13.5"
             fontFamily="JetBrains Mono, monospace"
-            fill="#F59E0B" fontWeight="700">
+            fill="#C1272D" fontWeight="700">
             +145%
           </text>
           <text x="320" y="36" fontSize="9.5"

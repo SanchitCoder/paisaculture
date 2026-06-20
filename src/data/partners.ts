@@ -1,5 +1,7 @@
 import type { PartnerLogo, Testimonial } from '../types'
 
+import { avatarUrl } from './images'
+
 export const partnerBanks: PartnerLogo[] = [
   { id: 'sbi', name: 'SBI', category: 'bank' },
   { id: 'icici', name: 'ICICI Bank', category: 'bank' },
@@ -12,16 +14,30 @@ export const partnerBanks: PartnerLogo[] = [
 ]
 
 export const partnerInsurers: PartnerLogo[] = [
-  { id: 'bajaj', name: 'Bajaj Allianz', category: 'insurer' },
-  { id: 'hdfc-life', name: 'HDFC Life', category: 'insurer' },
-  { id: 'icici-lombard', name: 'ICICI Lombard', category: 'insurer' },
-  { id: 'tata-aia', name: 'TATA AIA Life', category: 'insurer' },
+  { id: 'bajaj', name: 'Bajaj Allianz', category: 'insurer', logoUrl: '/partners/bajaj-allianz.svg' },
+  { id: 'hdfc-life', name: 'HDFC Life', category: 'insurer', logoUrl: '/partners/hdfc-life.svg' },
+  { id: 'icici-prudential', name: 'ICICI Prudential', category: 'insurer', logoUrl: '/partners/icici-prudential.svg' },
+  { id: 'icici-lombard', name: 'ICICI Lombard', category: 'insurer', logoUrl: '/partners/icici-lombard.svg' },
+  { id: 'sbi-life', name: 'SBI Life', category: 'insurer', logoUrl: '/partners/sbi-life.svg' },
+  { id: 'niva-bupa', name: 'Niva Bupa', category: 'insurer', logoUrl: '/partners/niva-bupa.svg' },
+  { id: 'tata-aia', name: 'Tata AIA', category: 'insurer', logoUrl: '/partners/tata-aia.svg' },
   { id: 'future', name: 'Future Generali', category: 'insurer' },
 ]
 
 export const partnerBrokers: PartnerLogo[] = [
   { id: 'edelweiss', name: 'Edelweiss', category: 'broker' },
   { id: 'wealth', name: 'Wealth Management', category: 'broker' },
+]
+
+/** Featured partners shown on the home page trust strip */
+export const featuredPartners: PartnerLogo[] = [
+  { id: 'hdfc-life', name: 'HDFC Life', category: 'insurer', logoUrl: '/partners/hdfc-life.svg' },
+  { id: 'icici-prudential', name: 'ICICI Prudential', category: 'insurer', logoUrl: '/partners/icici-prudential.svg' },
+  { id: 'sbi-life', name: 'SBI Life', category: 'insurer', logoUrl: '/partners/sbi-life.svg' },
+  { id: 'niva-bupa', name: 'Niva Bupa', category: 'insurer', logoUrl: '/partners/niva-bupa.svg' },
+  { id: 'tata-aia', name: 'Tata AIA', category: 'insurer', logoUrl: '/partners/tata-aia.svg' },
+  { id: 'icici-lombard', name: 'ICICI Lombard', category: 'insurer', logoUrl: '/partners/icici-lombard.svg' },
+  { id: 'bajaj', name: 'Bajaj Allianz', category: 'insurer', logoUrl: '/partners/bajaj-allianz.svg' },
 ]
 
 export const allPartners = [...partnerBanks, ...partnerInsurers, ...partnerBrokers]
@@ -33,7 +49,7 @@ export const testimonials: Testimonial[] = [
     author: 'Rahul Joshi',
     role: 'Operations Manager',
     company: 'Manufacturing firm, Pune',
-    avatar: 'https://picsum.photos/seed/rahul-joshi-pune/80/80',
+    avatar: avatarUrl('Rahul Joshi'),
   },
   {
     id: 't2',
@@ -41,7 +57,7 @@ export const testimonials: Testimonial[] = [
     author: 'Priya Deshmukh',
     role: 'Senior Software Engineer',
     company: 'IT sector, Pune',
-    avatar: 'https://picsum.photos/seed/priya-deshmukh-tech/80/80',
+    avatar: avatarUrl('Priya Deshmukh'),
   },
   {
     id: 't3',
@@ -49,6 +65,6 @@ export const testimonials: Testimonial[] = [
     author: 'Suresh Patil',
     role: 'Entrepreneur',
     company: 'SME business owner, Maharashtra',
-    avatar: 'https://picsum.photos/seed/suresh-patil-business/80/80',
+    avatar: avatarUrl('Suresh Patil'),
   },
 ]
