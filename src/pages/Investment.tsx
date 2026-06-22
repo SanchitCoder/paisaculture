@@ -4,6 +4,7 @@ import { TrendingUp, Shield, Coins, BarChart3, Layers, Star, ArrowRight } from '
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/common/SectionHeading'
 import CTASection from '../components/common/CTASection'
+import LeadCTAButton from '../components/lead/LeadCTAButton'
 import PageHero from '../components/common/PageHero'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { heroImages, sectionImages } from '../data/images'
@@ -242,9 +243,9 @@ export default function Investment() {
                   </div>
                 ))}
               </div>
-              <Link to="/book-appointment" className="btn-primary">
+              <LeadCTAButton ctaLabel="Plan My Pension" className="btn-primary">
                 Plan My Pension <ArrowRight size={15} />
-              </Link>
+              </LeadCTAButton>
             </motion.div>
           </div>
         </div>
@@ -254,7 +255,6 @@ export default function Investment() {
         title="Build Your Investment Portfolio"
         subtitle="A 30-minute conversation with our investment team can set the direction for the next 30 years."
         primaryLabel="Plan My Portfolio"
-        primaryHref="/book-appointment"
         secondaryLabel="Explore Advisory"
         secondaryHref="/services/advisory"
         variant="gradient"

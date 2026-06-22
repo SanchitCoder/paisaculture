@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { LineChart, BarChart2, Target, Shield, TrendingUp, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import SectionHeading from '../components/common/SectionHeading'
 import CTASection from '../components/common/CTASection'
+import LeadCTAButton from '../components/lead/LeadCTAButton'
 import PageHero from '../components/common/PageHero'
 import SegmentPhoto from '../components/common/SegmentPhoto'
 import { useReducedMotion } from '../hooks/useReducedMotion'
@@ -73,9 +73,9 @@ export default function Advisory() {
                 <p className="text-[15px] text-dark-600 leading-relaxed mb-8">
                   Unlike mutual funds, where your money goes into a pooled structure, PMS means your portfolio is individually managed with your name on every holding.
                 </p>
-                <Link to="/book-appointment" className="btn-primary">
+                <LeadCTAButton ctaLabel="Explore PMS" className="btn-primary">
                   Explore PMS <ArrowRight size={15} />
-                </Link>
+                </LeadCTAButton>
               </motion.div>
             </div>
 
@@ -266,7 +266,6 @@ export default function Advisory() {
         title="Talk to a Portfolio Advisor"
         subtitle="Get a professional assessment of your current financial position and a clear plan to optimize it."
         primaryLabel="Book Advisory Session"
-        primaryHref="/book-appointment"
         secondaryLabel="Explore Investments"
         secondaryHref="/services/investment"
         variant="dark"

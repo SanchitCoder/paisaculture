@@ -30,7 +30,7 @@ const values = [
   {
     icon: <Briefcase size={22} strokeWidth={1.8} className="text-emerald-600" />,
     title: 'Domain Expertise',
-    desc: 'Five founders, each with deep domain expertise. Your questions get answered by the right specialist.',
+    desc: 'Our co-founders bring deep domain expertise across insurance, loans, investments, and advisory — your questions get answered by the right specialist.',
     bg: 'bg-emerald-50',
   },
 ]
@@ -44,7 +44,7 @@ export default function About() {
         <title>About Us - PAISACULTURE SERVICES LLP</title>
         <meta
           name="description"
-          content="Founded by 5 entrepreneur friends in Pune, PAISACULTURE simplifies financial complexity with a single-window advisory across insurance, loans, investments, and advisory."
+          content="Founded by Kounal Chorrdiyaa and Harshal Chordiya in Pune, PAISACULTURE simplifies financial complexity with a single-window advisory across insurance, loans, investments, and advisory."
         />
       </Helmet>
 
@@ -90,10 +90,10 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-[15px] text-dark-600 leading-relaxed">
                 <p>
-                  Five friends with very different businesses sat down one evening to compare financial advisors. Each had a different insurance agent, a different loan broker, and a different investment manager — all giving advice in silos, with no one looking at the full picture.
+                  Kounal Chorrdiyaa and Harshal Chordiya saw the same problem from different angles — financial advice was fragmented, jargon-heavy, and rarely in the client's corner. Insurance, loans, and investments were handled by separate agents with no one looking at the full picture.
                 </p>
                 <p>
-                  That conversation became PAISACULTURE SERVICES LLP. We pooled our domain expertise — insurance, banking, investments, risk management, and financial planning — and built a firm that gives every client what we could not find ourselves: one trusted advisor for every financial need.
+                  That shared frustration became PAISACULTURE SERVICES LLP. Together they pooled their expertise across insurance, banking, investments, and financial planning — and built a firm that gives every client what they could not find themselves: one trusted advisor for every financial need.
                 </p>
                 <p>
                   Today we serve working professionals, business owners, and rural clients across Maharashtra and beyond. Our network of preferred banks, insurers, and broking partners means you always get best-in-class products — with independent advice about which one is right for you.
@@ -126,7 +126,7 @@ export default function About() {
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white border border-dark-100">
                 <Users size={18} className="text-primary flex-shrink-0" strokeWidth={2} />
                 <div>
-                  <p className="text-[13px] font-semibold text-dark-800">5 Founders, 10+ Businesses</p>
+                  <p className="text-[13px] font-semibold text-dark-800">2 Co-Founders, One Vision</p>
                   <p className="text-[12.5px] text-dark-500">Cross-domain expertise in a single advisory relationship</p>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function About() {
         <div className="container-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: 5, suffix: '', label: 'Co-Founders' },
+              { value: 2, suffix: '', label: 'Co-Founders' },
               { value: 10, suffix: '+', label: 'Businesses' },
               { value: 8, suffix: '+', label: 'Years in Business' },
               { value: 20, suffix: '+', label: 'Partner Banks & Insurers' },
@@ -227,12 +227,12 @@ export default function About() {
         <div className="container-xl">
           <SectionHeading
             eyebrow="Our Founders"
-            title="Five Specialists, One Team"
-            subtitle="Each founder brings deep expertise in their domain — together we cover every corner of your financial life."
+            title="Meet Our Co-Founders"
+            subtitle="The visionaries behind Paisa Culture — bringing insurance, investments, loans, and wealth management under one trusted roof."
             className="mb-14"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {teamMembers.map((member, i) => (
               <motion.div
                 key={member.id}
@@ -242,11 +242,11 @@ export default function About() {
                 transition={{ duration: 0.55, delay: i * 0.09 }}
                 className="group bg-white rounded-2xl border border-[rgba(30,41,59,0.07)] overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-[4/5] overflow-hidden bg-primary-50">
                   <img
                     src={member.imageUrl}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                     width={400}
                     height={400}
@@ -307,7 +307,6 @@ export default function About() {
         title="Ready to Simplify Your Finances?"
         subtitle="Talk to our team and get a clear picture of where you stand — and where you could be."
         primaryLabel="Book Free Consultation"
-        primaryHref="/book-appointment"
         secondaryLabel="View Our Services"
         secondaryHref="/services"
         variant="dark"

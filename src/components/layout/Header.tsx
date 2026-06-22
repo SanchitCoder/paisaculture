@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import LeadCTAButton from '../lead/LeadCTAButton'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -154,13 +155,13 @@ export default function Header() {
           >
             +91 99224 18172
           </a>
-          <Link
-            to="/book-appointment"
+          <LeadCTAButton
+            ctaLabel="Book Consult"
             className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-[12.5px] font-semibold rounded-xl transition-[transform,background-color] duration-[160ms] hover:bg-primary-700 active:scale-[0.97]"
             style={{ transitionTimingFunction: 'var(--ease-out)' }}
           >
             Book Consult
-          </Link>
+          </LeadCTAButton>
         </div>
 
         {/* Mobile toggle */}
@@ -264,9 +265,9 @@ export default function Header() {
                 >
                   +91 99224 18172
                 </a>
-                <Link to="/book-appointment" className="btn-primary justify-center">
+                <LeadCTAButton ctaLabel="Book Free Consultation" className="btn-primary justify-center">
                   Book Free Consultation
-                </Link>
+                </LeadCTAButton>
               </motion.div>
             </nav>
           </motion.div>

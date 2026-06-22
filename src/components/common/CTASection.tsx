@@ -1,23 +1,26 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import LeadCTAButton from '../lead/LeadCTAButton'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
 interface CTASectionProps {
   title: string
   subtitle: string
   primaryLabel: string
-  primaryHref: string
   secondaryLabel?: string
   secondaryHref?: string
   variant?: 'dark' | 'light' | 'gradient'
+}
+
+function isExternalHref(href: string) {
+  return href.startsWith('http://') || href.startsWith('https://')
 }
 
 export default function CTASection({
   title,
   subtitle,
   primaryLabel,
-  primaryHref,
   secondaryLabel,
   secondaryHref,
   variant = 'dark',
@@ -51,19 +54,25 @@ export default function CTASection({
           <p className="text-white/55 text-[15px] leading-relaxed mb-8">{subtitle}</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link to={primaryHref} className="btn-primary group">
+            <LeadCTAButton ctaLabel={primaryLabel} className="btn-primary group">
               <Calendar size={15} />
               {primaryLabel}
               <ArrowRight
                 size={14}
                 className="transition-transform duration-200 group-hover:translate-x-0.5"
               />
-            </Link>
+            </LeadCTAButton>
 
             {secondaryLabel && secondaryHref && (
-              <Link to={secondaryHref} className="btn-outline-white">
-                {secondaryLabel}
-              </Link>
+              isExternalHref(secondaryHref) ? (
+                <a href={secondaryHref} className="btn-outline-white" target="_blank" rel="noopener noreferrer">
+                  {secondaryLabel}
+                </a>
+              ) : (
+                <Link to={secondaryHref} className="btn-outline-white">
+                  {secondaryLabel}
+                </Link>
+              )
             )}
           </div>
         </motion.div>

@@ -9,6 +9,7 @@ import {
 import StatBadge from '../components/common/StatBadge'
 import LogoCloud from '../components/common/LogoCloud'
 import CTASection from '../components/common/CTASection'
+import LeadCTAButton from '../components/lead/LeadCTAButton'
 import HeroVisual from '../components/hero/HeroVisual'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { ageStages } from '../data/services'
@@ -211,11 +212,11 @@ export default function Home() {
               transition={{ duration: 0.55, delay: 0.5, ease: easeOut }}
               className="flex flex-col sm:flex-row gap-3"
             >
-              <Link to="/book-appointment" className="btn-primary group">
+              <LeadCTAButton ctaLabel="Book Free Consultation" className="btn-primary group">
                 <Calendar size={15} />
                 Book Free Consultation
                 <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Link>
+              </LeadCTAButton>
               <Link to="/services" className="btn-secondary">
                 Our Services
               </Link>
@@ -662,7 +663,6 @@ export default function Home() {
         title="Start Your Financial Journey"
         subtitle="Book a free 30-minute consultation. No obligation, no jargon — just clear, honest advice."
         primaryLabel="Book Free Consultation"
-        primaryHref="/book-appointment"
         secondaryLabel="Chat on WhatsApp"
         secondaryHref="https://wa.me/919922418172?text=Hi%2C%20I%27m%20interested%20in%20PAISACULTURE%27s%20financial%20services"
         variant="dark"

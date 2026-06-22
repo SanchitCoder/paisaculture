@@ -3,7 +3,10 @@ import { AnimatePresence } from 'framer-motion'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import WhatsAppButton from './components/layout/WhatsAppButton'
+import LeadCaptureWidget from './components/lead/LeadCaptureWidget'
+import LeadCapturePopup from './components/lead/LeadCapturePopup'
 import PageTransition from './components/common/PageTransition'
+import { LeadCaptureProvider } from './context/LeadCaptureContext'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -41,14 +44,18 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <LeadCaptureProvider>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+          <LeadCaptureWidget />
+          <LeadCapturePopup />
+          <WhatsAppButton />
+        </div>
+      </LeadCaptureProvider>
     </BrowserRouter>
   )
 }

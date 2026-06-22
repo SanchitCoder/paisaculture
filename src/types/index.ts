@@ -75,6 +75,20 @@ export interface FormField {
 
 export type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
+export type LeadCaptureSource = 'chatbot' | 'cta'
+export type LeadCaptureDisplayMode = 'chatbot' | 'popup'
+
+export interface LeadCaptureOptions {
+  source?: LeadCaptureSource
+  ctaLabel?: string
+}
+
+export interface LeadContactForm {
+  name: string
+  email: string
+  phone: string
+}
+
 export interface StatItem {
   value: number
   suffix: string

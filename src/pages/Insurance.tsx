@@ -208,7 +208,6 @@ export default function Insurance() {
         title="Get a Free Insurance Review"
         subtitle="We audit your existing policies and identify coverage gaps — at no cost to you."
         primaryLabel="Book Free Review"
-        primaryHref="/book-appointment"
         secondaryLabel="Contact Us"
         secondaryHref="/contact"
         variant="dark"

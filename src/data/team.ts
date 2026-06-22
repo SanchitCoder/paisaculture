@@ -1,41 +1,18 @@
 import type { TeamMember } from '../types'
 
-import { avatarUrl } from './images'
-
 export const teamMembers: TeamMember[] = [
   {
-    id: 'm1',
-    name: 'Vikram Kulkarni',
-    role: 'Co-Founder, Insurance & Risk',
-    bio: '12+ years advising clients on life, health, and commercial insurance across Maharashtra.',
-    imageUrl: avatarUrl('Vikram Kulkarni', 400),
+    id: 'kounal',
+    name: 'Kounal Chorrdiyaa',
+    role: 'Co-Founder',
+    bio: 'Leads Paisa Culture with a client-first approach across insurance, investments, loans, and wealth management — helping families and businesses make confident financial decisions.',
+    imageUrl: '/team/kounal-chordiya.png',
   },
   {
-    id: 'm2',
-    name: 'Ananya Sharma',
-    role: 'Co-Founder, Investment & Wealth',
-    bio: 'Certified financial planner with deep expertise in equity, mutual funds, and portfolio management.',
-    imageUrl: avatarUrl('Ananya Sharma', 400),
-  },
-  {
-    id: 'm3',
-    name: 'Rohit Mehta',
-    role: 'Co-Founder, Loans & Credit',
-    bio: 'Former banker with a decade of experience structuring home, business, and vehicle loans.',
-    imageUrl: avatarUrl('Rohit Mehta', 400),
-  },
-  {
-    id: 'm4',
-    name: 'Deepa Joshi',
-    role: 'Co-Founder, Advisory',
-    bio: 'Specializes in financial planning for professionals at every life stage, from first job to retirement.',
-    imageUrl: avatarUrl('Deepa Joshi', 400),
-  },
-  {
-    id: 'm5',
-    name: 'Kiran Patkar',
-    role: 'Co-Founder, Corporate & SME',
-    bio: 'Expert in corporate insurance, keyman policies, and SME financial structuring.',
-    imageUrl: avatarUrl('Kiran Patkar', 400),
+    id: 'harshal',
+    name: 'Harshal Chordiya',
+    role: 'Co-Founder',
+    bio: 'Brings hands-on expertise in financial advisory and business strategy, building trusted relationships with clients across Pune and Maharashtra.',
+    imageUrl: '/team/harshal-chordiya.png',
   },
 ]

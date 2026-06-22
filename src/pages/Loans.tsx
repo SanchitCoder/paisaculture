@@ -189,7 +189,6 @@ export default function Loans() {
         title="Check Your Loan Eligibility"
         subtitle="Free, no-obligation eligibility check across our network of banks. Get a call back within 24 hours."
         primaryLabel="Check My Eligibility"
-        primaryHref="/book-appointment"
         secondaryLabel="Talk to Us"
         secondaryHref="/contact"
         variant="dark"

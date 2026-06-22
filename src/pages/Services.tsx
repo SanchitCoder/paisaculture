@@ -150,7 +150,6 @@ export default function Services() {
         title="Not Sure Where to Start?"
         subtitle="Book a free consultation and we will help you identify exactly which services apply to your situation."
         primaryLabel="Book Free Consultation"
-        primaryHref="/book-appointment"
         secondaryLabel="Contact Us"
         secondaryHref="/contact"
         variant="dark"
