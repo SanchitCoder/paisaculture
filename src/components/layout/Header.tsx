@@ -12,6 +12,7 @@ const navLinks = [
     href: '/services',
     children: [
       { label: 'Insurance', href: '/services/insurance' },
+      { label: 'Term & Vehicle Insurance', href: '/insurance-plans' },
       { label: 'Loans', href: '/services/loans' },
       { label: 'Investment', href: '/services/investment' },
       { label: 'Advisory', href: '/services/advisory' },
@@ -150,10 +151,10 @@ export default function Header() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-2">
           <a
-            href="tel:+919922418172"
+            href="tel:+917028383848"
             className="text-[12.5px] font-medium text-dark-500 hover:text-primary transition-colors duration-150 px-3 py-1.5"
           >
-            +91 99224 18172
+            +91 70283 83848
           </a>
           <LeadCTAButton
             ctaLabel="Book Consult"
@@ -260,10 +261,10 @@ export default function Header() {
                 className="mt-8 flex flex-col gap-3"
               >
                 <a
-                  href="tel:+919922418172"
+                  href="tel:+917028383848"
                   className="text-[14px] font-medium text-dark-600 hover:text-primary transition-colors"
                 >
-                  +91 99224 18172
+                  +91 70283 83848
                 </a>
                 <LeadCTAButton ctaLabel="Book Free Consultation" className="btn-primary justify-center">
                   Book Free Consultation

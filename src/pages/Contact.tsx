@@ -61,7 +61,7 @@ export default function Contact() {
         <title>Contact - PAISACULTURE SERVICES LLP</title>
         <meta
           name="description"
-          content="Get in touch with PAISACULTURE SERVICES LLP in Pune. Call +91 99224 18172 or email info@paisaculture.com for insurance, loan, investment, and advisory queries."
+          content="Get in touch with PAISACULTURE SERVICES LLP in Pune. Call +91 70283 83848 or email info@paisaculture.com for insurance, loan, investment, and advisory queries."
         />
       </Helmet>
 
@@ -247,7 +247,7 @@ export default function Contact() {
 
               <div className="space-y-4">
                 {[
-                  { Icon: Phone, label: 'Phone', value: '+91 99224 18172', href: 'tel:+919922418172' },
+                  { Icon: Phone, label: 'Phone', value: '+91 70283 83848', href: 'tel:+917028383848' },
                   { Icon: Mail, label: 'Email', value: 'info@paisaculture.com', href: 'mailto:info@paisaculture.com' },
                   { Icon: MapPin, label: 'Address', value: 'Pune, Maharashtra, India', href: undefined },
                   { Icon: Clock, label: 'Hours', value: 'Mon-Sat: 10:00 AM - 7:00 PM', href: undefined },

@@ -119,7 +119,7 @@ export default function TermsConditions() {
               For questions about these Terms and Conditions, contact:<br />
               PAISACULTURE SERVICES LLP<br />
               Email: <a href="mailto:info@paisaculture.com" className="text-primary">info@paisaculture.com</a><br />
-              Phone: +91 99224 18172
+              Phone: +91 70283 83848
             </p>
           </motion.div>
         </div>

@@ -119,7 +119,7 @@ export default function PrivacyPolicy() {
             <p>
               PAISACULTURE SERVICES LLP<br />
               Email: <a href="mailto:info@paisaculture.com" className="text-primary">info@paisaculture.com</a><br />
-              Phone: +91 99224 18172<br />
+              Phone: +91 70283 83848<br />
               Address: Pune, Maharashtra, India
             </p>
           </motion.div>

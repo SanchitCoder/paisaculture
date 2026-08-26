@@ -152,7 +152,7 @@ export default function BookAppointment() {
                   </div>
                 </div>
                 <p className="text-[13px] text-dark-400 mb-6">
-                  You will receive a confirmation call from our team. For urgent queries, call us directly at +91 99224 18172.
+                  You will receive a confirmation call from our team. For urgent queries, call us directly at +91 70283 83848.
                 </p>
                 <button
                   onClick={() => { setForm(initial); setStatus('idle') }}

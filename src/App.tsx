@@ -11,6 +11,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Insurance from './pages/Insurance'
+import InsurancePlans from './pages/InsurancePlans'
 import Loans from './pages/Loans'
 import Investment from './pages/Investment'
 import Advisory from './pages/Advisory'
@@ -29,6 +30,7 @@ function AnimatedRoutes() {
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
         <Route path="/services/insurance" element={<PageTransition><Insurance /></PageTransition>} />
+        <Route path="/insurance-plans" element={<PageTransition><InsurancePlans /></PageTransition>} />
         <Route path="/services/loans" element={<PageTransition><Loans /></PageTransition>} />
         <Route path="/services/investment" element={<PageTransition><Investment /></PageTransition>} />
         <Route path="/services/advisory" element={<PageTransition><Advisory /></PageTransition>} />
