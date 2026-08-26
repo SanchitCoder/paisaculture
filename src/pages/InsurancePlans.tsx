@@ -266,6 +266,18 @@ export default function InsurancePlans() {
                     IRDAI-Compliant Advisory
                   </span>
                 </div>
+
+                <div className="flex flex-wrap items-center gap-3 mt-6">
+                  <LeadCTAButton ctaLabel="Book Free Consultation — Hero" className="btn-primary group">
+                    <Calendar size={15} />
+                    Book Free Consultation
+                    <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </LeadCTAButton>
+                  <a href="tel:+917028383848" className="btn-secondary">
+                    <Phone size={15} />
+                    Call Now
+                  </a>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -609,6 +621,34 @@ export default function InsurancePlans() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={prefersReduced ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55, ease: easeOut }}
+            className="max-w-3xl mx-auto mt-10 flex flex-col sm:flex-row items-center justify-between gap-5 bg-canvas-alt rounded-2xl border border-[rgba(30,41,59,0.08)] px-6 py-6"
+          >
+            <div className="text-center sm:text-left">
+              <h3 className="font-serif font-bold text-lg text-dark-900">Still have questions?</h3>
+              <p className="text-[13.5px] text-dark-500 mt-0.5">Talk to an advisor — no cost, no obligation.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 flex-shrink-0">
+              <LeadCTAButton ctaLabel="Book Free Consultation — FAQ" className="btn-primary w-full sm:w-auto justify-center text-[13.5px]">
+                <Calendar size={14} />
+                Book Free Consultation
+              </LeadCTAButton>
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white text-[13.5px] font-semibold rounded-xl transition-[transform,box-shadow] duration-150 hover:shadow-[0_4px_16px_rgba(37,211,102,0.32)] active:scale-[0.97] w-full sm:w-auto"
+              >
+                <MessageCircle size={14} />
+                Chat on WhatsApp
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
